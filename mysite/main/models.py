@@ -1,9 +1,8 @@
-from django.urls import reverse
-class Post(models.Model):
-# ...
-def get_absolute_url(self):
-return reverse('blog:post_detail',
-args=[self.publish.year,
-self.publish.month,
-self.publish.day,
-self.slug])
+from django.db import models
+
+class Tutorial(models.Model):
+	Tutorial_title = models.CharField(max_length=200)
+	Tutorial_content = models.TextField()
+	Tutorial_published = models.DateTimeField("date published")
+	def __str__(self):
+		return self.Tutorial_title
