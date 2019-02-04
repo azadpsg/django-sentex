@@ -1,10 +1,33 @@
-<h1>  heloo</h1>
+{% extends 'main/header.html' %}
 
-{% for tut in Tutorials %}
-    <p>{{tut.Tutorial_title}}</p>
-    <br>
-    <p>{{tut.Tutorial_published}}</p>
-    <br>
-    <p>{{tut.Tutorial_content}}</p>
-    <br><br>
-{% endfor %}
+
+					<a class="btn-floating btn-large cyan pulse"><i class="material-icons">edit</i></a>
+
+{% block content %}
+  <div class="row">
+    {% for tut in Tutorials %}
+        <div class="col s12 m6 l4">
+          <div class="card blue darken-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">{{tut.Tutorial_title}}</span>
+              <p style="font-size:70%">Published {{tut.Tutorial_published}}</p>
+              <p>{{tut.Tutorial_content|safe}}</p>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}T
+
+
+
+ <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
