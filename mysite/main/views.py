@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
 
 
+# Create your views here.
 def homepage(request):
     return render(request = request,
                   template_name='main/home.html',

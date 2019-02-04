@@ -1,7 +1,6 @@
 {% extends 'main/header.html' %}
 
 
-					<a class="btn-floating btn-large cyan pulse"><i class="material-icons">edit</i></a>
 
 {% block content %}
   <div class="row">
@@ -11,12 +10,12 @@
             <div class="card-content white-text">
               <span class="card-title">{{tut.Tutorial_title}}</span>
               <p style="font-size:70%">Published {{tut.Tutorial_published}}</p>
-              <p>{{tut.Tutorial_content|safe}}</p>
+              <p>{{tut.Tutorial_content}}</p>
             </div>
           </div>
         </div>
     {% endfor %}
-{% endblock %}T
+{% endblock %}
 
 
 
