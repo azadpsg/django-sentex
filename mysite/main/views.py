@@ -31,4 +31,5 @@ def register(request):
     form = UserCreationForm
     return render(request = request,
                   template_name = "main/register.html",
-                  context={"form":form})
+                  context={"form":form}
+                  )
