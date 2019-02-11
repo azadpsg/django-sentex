@@ -4,49 +4,20 @@
     <!-- Compiled and minified CSS -->
         <link href="{% static "main/css/materialize.css" %}" rel="stylesheet">
 
-    
-    <!-- Compiled and minified JavaScript -->
+        <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-   {% if messages %}
-        {% for message in messages %}
-          <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
-        {% endfor %}
-    {% endif %}
+  
 
 <body>
+       {% include "main/includes/navbar.html" %}
 
-  <nav>
-    <div class="nav-wrapper" style="background-color:darkblue ">
-     <a href="#" class="brand-logo" style="font-size: xx-large;">  -Pro-Lang</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        {% if user.is_authenticated  %}
 
-        <li><a href="/account">{{user.username}}</a></li>
-        <li><a href="/logout">Log Out</a></li>
-        {% else %}
-        <li><a href="/register">Register</a></li>
-        <li><a href="/Login">Login</a></li>
-        <li><a href="collapsible.html">Blog</a></li>
-        {% endif %}
-      </ul>
-    </div>
-  </nav>
-  <script type="text/javascript">M.toast({html: "TaaaaaaDAAAAAAA", classes: 'cyan rounded', displayLength:2000}) </script>
-{% if messages %}
-        {% for message in messages %}
-            {% if message.tags == 'success'%}
-                <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
-            {% elif message.tags == 'info'%}
-                <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
-            {% elif message.tags == 'warning'%}
-                <script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:10000});</script>
-            {% elif message.tags == 'error'%}
-                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
+       {% include "main/includes/messaging.html" %}
+
+
+
   <div class="container">
     <br>
     <br>
